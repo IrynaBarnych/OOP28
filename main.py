@@ -11,7 +11,6 @@ class FileUtils:
                 return len(lines)
         except FileNotFoundError:
             return -1
-
 file_path = '.txt'
 
 lines_count = FileUtils.count_lines(file_path)
