@@ -13,7 +13,6 @@ class Character:
 
 player1 = Character("Гравець 1", 100, 20)
 player2 = Character("Гравець 2", 90, 15)
-
 player1.attack(player2)
 player2.attack(player1)
 
