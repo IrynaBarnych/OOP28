@@ -29,7 +29,6 @@ class AreaCalculator:
         AreaCalculator.count_of_calculations += 1
         return 0.5 * math.sqrt(a) * math.sqrt(b)
 
-
 triangle = AreaCalculator.triangle_area(2, 5)
 print(f"Площа трикутника: {triangle}")
 rectangle = AreaCalculator.rectangle_area(2, 5)
