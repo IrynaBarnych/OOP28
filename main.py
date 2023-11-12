@@ -13,7 +13,6 @@ class Converter:
     def fah_to_cel(fahrenheit):
         Converter.count += 1
         return (fahrenheit - 32) * 5/9
-
     @staticmethod
     def get_conversion_count():
         return Converter.count
