@@ -7,6 +7,7 @@
 методів. Також клас має розрахувати кількість підрахунків
  площі та повернути це значення статичним методом"""
 
+import math
 class AreaCalculator:
     count_of_calculations = 0
 
@@ -15,11 +16,27 @@ class AreaCalculator:
         AreaCalculator.count_of_calculations += 1
         return 0.5 * h * a
     @staticmethod
-    def square_area(a, b):
+    def rectangle_area(a, b):
         AreaCalculator.count_of_calculations += 1
         return a * b
+    @staticmethod
+    def square_area(a):
+        AreaCalculator.count_of_calculations += 1
+        return a ** 2
+
+    @staticmethod
+    def rhombus_area(a,b):
+        AreaCalculator.count_of_calculations += 1
+        return 0.5 * math.sqrt(a) * math.sqrt(b)
+
+
 triangle = AreaCalculator.triangle_area(2, 5)
-print(triangle)
-square = AreaCalculator.square_area(23, 5)
-print(square)
+print(f"Площа трикутника: {triangle}")
+rectangle = AreaCalculator.rectangle_area(2, 5)
+print(f"Площа прямокутника: {rectangle}")
+area = AreaCalculator.square_area(5)
+print(f"Площа квадрата: {area}")
+rhombus = AreaCalculator.rhombus_area(4,4)
+print(f"Площа ромба: {rhombus}")
+
 print("Кількість підрахунку площ", AreaCalculator.count_of_calculations)
