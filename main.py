@@ -36,6 +36,7 @@ min_result = Calculator.min_value(a, b, c, d)
 average_result = Calculator.average(a, b, c, d)
 factorial_result = Calculator.factorial(a)
 
+
 print("Максимум:", max_result)
 print("Мінімум:", min_result)
 print("Середнє арифметичне:", average_result)
