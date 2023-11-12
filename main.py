@@ -1,42 +1,43 @@
-"""Завдання 2
-Створіть клас для підрахунку площі геометричних
-фігур. Клас має надавати функціональність підрахунку
-площі трикутника за різними формулами, площі прямокутника,
- площі квадрата, площі ромба. Методи класу для
-підрахунку площі реалізуйте за допомогою статичних
-методів. Також клас має розрахувати кількість підрахунків
- площі та повернути це значення статичним методом"""
+#Завдання 3
+#Створіть клас для підрахунку максимуму з чотирьох аргументів, мінімуму з чотирьох аргументів, середнє
+#арифметичне із чотирьох аргументів, факторіалу аргументу. Реалізуйте функціональність у вигляді статичних
+#методів.
 
 import math
-class AreaCalculator:
+import math
+
+class Calculator:
     count_of_calculations = 0
 
     @staticmethod
-    def triangle_area(a, h):
-        AreaCalculator.count_of_calculations += 1
-        return 0.5 * h * a
-    @staticmethod
-    def rectangle_area(a, b):
-        AreaCalculator.count_of_calculations += 1
-        return a * b
-    @staticmethod
-    def square_area(a):
-        AreaCalculator.count_of_calculations += 1
-        return a ** 2
+    def max_value(a, b, c, d):
+        Calculator.count_of_calculations += 1
+        return max(a, b, c, d)
 
     @staticmethod
-    def rhombus_area(a,b):
-        AreaCalculator.count_of_calculations += 1
-        return 0.5 * math.sqrt(a) * math.sqrt(b)
+    def min_value(a, b, c, d):
+        Calculator.count_of_calculations += 1
+        return min(a, b, c, d)
 
+    @staticmethod
+    def average(a, b, c, d):
+        Calculator.count_of_calculations += 1
+        return (a + b + c + d) / 4
 
-triangle = AreaCalculator.triangle_area(2, 5)
-print(f"Площа трикутника: {triangle}")
-rectangle = AreaCalculator.rectangle_area(2, 5)
-print(f"Площа прямокутника: {rectangle}")
-area = AreaCalculator.square_area(5)
-print(f"Площа квадрата: {area}")
-rhombus = AreaCalculator.rhombus_area(4,4)
-print(f"Площа ромба: {rhombus}")
+    @staticmethod
+    def factorial(n):
+        Calculator.count_of_calculations += 1
+        return math.factorial(n)
 
-print("Кількість підрахунку площ", AreaCalculator.count_of_calculations)
+a, b, c, d = 5, 10, 15, 20
+
+max_result = Calculator.max_value(a, b, c, d)
+min_result = Calculator.min_value(a, b, c, d)
+average_result = Calculator.average(a, b, c, d)
+factorial_result = Calculator.factorial(a)
+
+print("Максимум:", max_result)
+print("Мінімум:", min_result)
+print("Середнє арифметичне:", average_result)
+print(f"Факторіал {a}:", factorial_result)
+print("Кількість обчислень:", Calculator.count_of_calculations)
