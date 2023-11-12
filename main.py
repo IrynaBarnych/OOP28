@@ -27,7 +27,6 @@ class Fraction:
     def __truediv__(self, other):
         other.denominator, other.numerator = other.numerator, other.denominator
         return Fraction.__mul__(self, other)
-
     @staticmethod
     def get_count():
         return Fraction.count
