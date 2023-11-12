@@ -12,13 +12,13 @@ class FileUtils:
         except FileNotFoundError:
             return -1
 
-file_path = 'приклад.txt'
-
+file_path = '.txt'
 
 lines_count = FileUtils.count_lines(file_path)
-print(f"Кількість рядків у файлі '{file_path}': {lines_count}")
-
-print(f"Файл '{file_path}' не знайдено.")
+if lines_count != -1:
+    print(f"Кількість рядків у файлі '{file_path}': {lines_count}")
+else:
+    print(f"Файл '{file_path}' не знайдено.")
 
 
 
