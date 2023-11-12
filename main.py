@@ -5,7 +5,7 @@ class Fraction:
     def __init__(self, numerator, denominator):
         self.numerator = numerator
         self.denominator = denominator
-
+        Fraction.count += 1
     def __str__(self):
         return f"{self.numerator}/{self.denominator}"
 
