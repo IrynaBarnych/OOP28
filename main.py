@@ -1,6 +1,7 @@
 #До вже реалізованого класу «Дріб» додайте статичний метод, який при виклику повертає
 # кількість створених об’єктів класу «Дріб».
 class Fraction:
+    count = 0
     def __init__(self, numerator, denominator):
         self.numerator = numerator
         self.denominator = denominator
@@ -27,6 +28,9 @@ class Fraction:
         other.denominator, other.numerator = other.numerator, other.denominator
         return Fraction.__mul__(self, other)
 
+    @staticmethod
+    def get_count():
+        return Fraction.count
 
 fraction1 = Fraction(4, 7)
 fraction2 = Fraction(5, 8)
@@ -35,6 +39,8 @@ print(fraction1 + fraction2)
 print(fraction1 - fraction2)
 print(fraction1 * fraction2)
 print(fraction1 / fraction2)
+
+print("Кількість створених об'єктів:", Fraction.get_count())
 
 
 
