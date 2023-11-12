@@ -16,13 +16,10 @@ class InformationSystem:
             print(f"Користувач {username} не знайдений. Додайте користувача перед додаванням контактів.")
 
 info_system = InformationSystem()
-
 info_system.add_user("Анна")
 info_system.add_user("Марія")
-
 info_system.add_contact("Анна", "111")
 info_system.add_contact("Анна", "222")
 info_system.add_contact("Марія", "333")
-
 print(info_system.data)
 
