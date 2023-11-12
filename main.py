@@ -22,7 +22,7 @@ fahrenheit_temperature = Converter.cel_to_fah(celsius_temperature)
 fahrenheit_temperature = 25
 celsius_temperature = Converter.cel_to_fah(celsius_temperature)
 
-print(f"{celsius_temperature} градусів Цельсія дорівнює {fahrenheit_temperature:} градусів Фаренгейта")
-print(f"{fahrenheit_temperature} градусів Цельсія дорівнює {celsius_temperature:} градусів Фаренгейта")
+print(f"{celsius_temperature} градусів Цельсія дорівнює {fahrenheit_temperature} градусів Фаренгейта")
+print(f"{fahrenheit_temperature} градусів Цельсія дорівнює {celsius_temperature} градусів Фаренгейта")
 
 print("Кількість підрахунків температури:", Converter.get_conversion_count())
