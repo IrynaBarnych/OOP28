@@ -8,10 +8,8 @@ class Student:
         self.age = age
         self.grade = grade
 
-
     def add_course(self, course):
         print(f"Предмет {course} додано до списку курсів студента {self.name}.")
-
 
 student1 = Student("Іван", 20, "A")
 student2 = Student("Марія", 22, "B")
