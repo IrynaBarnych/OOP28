@@ -1,53 +1,47 @@
-# Завдання 2
-# Реалізуйте клас «Стадіон». Збережіть у класі: назву стадіону, дату відкриття, країну, місто, місткість.
-# Реалізуйте методи класу для введення-виведення даних та інших
-# операцій. До вже реалізованого класу «Стадіон» додайте
-# необхідні перевантажені методи та оператори.
+# Завдання 3
+# До вже реалізованого класу «Автомобіль» додайте необхідні перевантажені методи та оператори.
 
-class Stadium:
+class Car:
     count = 0
+    def __init__(self, brand, model, year, cost_USA, dolar):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.cost_USA = cost_USA
+        self.dolar = dolar
+        Car.count += 1
 
-    def __init__(self, name, opening_date, country, city, capacity, length, width, distance_a, distance_b):
-        self.name = name
-        self.opening_date = opening_date
-        self.country = country
-        self.city = city
-        self.capacity = capacity
-        self.length = length
-        self.width = width
-        self.distance_a = distance_a
-        self.distance_b = distance_b
-        Stadium.count += 1
+    def start_engine(self):
+        print("Двигун запущено")
 
     def __sub__(self, other):
-        return abs(self.capacity - other.capacity)
+        return self.year - other.year
 
     def __mul__(self, other):
-        square1 = self.length * self.width
-        square2 = other.length * other.width
-        return abs(square1 - square2)
+        cost1 = self.cost_USA * self.dolar
+        cost2 = other.cost_USA * other.dolar
+        return abs(cost1 - cost2)
 
-    def __add__(self, other):
-        distance1 = self.distance_a ** 2 + self.distance_b ** 2
-        distance2 = other.distance_a ** 2 + other.distance_b ** 2
-        return abs(distance1 - distance2)
+    def car_info(self):
+        print(f"Марка автомобіля: {self.brand}, Модель: {self.model}, Рік випуску: {self.year},"
+              f" Вартість у Доларах: {self.cost_USA}, Курс Долару: {self.dolar}")
 
     @staticmethod
     def get_count():
-        return Stadium.count
+        return Car.count
 
-stadion1 = Stadium("Олімпійський", "22.09.1923", "Україна", "Київ", 70050,
-                   150, 100, 1, 2)
-stadion2 = Stadium("Донбас-Арена", "29.09.2009", "Україна", "Донецьк", 525180,
-                   105, 68, 2, 3)
+# Створення екземплярів класу
+car_instance1 = Car("BMW", "X5", 2022, 13999, 36)
+car_instance1.start_engine()
+car_instance1.car_info()
+car_instance2 = Car("BMW", "X6", 2023, 17599, 36)
+car_instance2.start_engine()
+car_instance2.car_info()
 
-difference = stadion1 - stadion2
-print(f"Різниця в місткості стадіонів: {difference} осіб")
+difference = car_instance1 - car_instance2
+print(f"Різниця в роках: {difference}")
 
-area_difference = stadion1 * stadion2
-print(f"Різниця в площі стадіонів: {area_difference} квадратних метрів")
+cost_difference = car_instance1 * car_instance2
+print(f"Різниця в вартості: {cost_difference} Гривень")
 
-plane_distance = stadion1 + stadion2
-print(f"Різниця від центру міста до стадіонів: {plane_distance}")
-
-print("Кількість створених об'єктів:", Stadium.get_count())
+print("Кількість створених об'єктів:", Car.get_count())
