@@ -5,6 +5,7 @@
 # необхідні перевантажені методи та оператори.
 
 class Stadium:
+    count = 0
     def __init__(self, name, opening_date, country, city, capacity, length, width, distance_a, distance_b):
         self.name = name
         self.opening_date = opening_date
