@@ -39,7 +39,6 @@ print(fraction1 + fraction2)
 print(fraction1 - fraction2)
 print(fraction1 * fraction2)
 print(fraction1 / fraction2)
-
 print("Кількість створених об'єктів:", Fraction.get_count())
 
 
