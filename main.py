@@ -1,24 +1,21 @@
-#Завдання 4
-#Створіть клас FileUtils, який має метод класу count_lines, який приймає шлях до файлу і повертає
-#кількість рядків у файлі.
+#Завдання 5
+#Створіть клас Character, який має атрибути name, health та damage. Реалізуйте метод класу attack, який виводить
+#повідомлення про атаку гравця.
 
-class FileUtils:
-    @classmethod
-    def count_lines(cls, file_path):
-        try:
-            with open(file_path, 'r') as file:
-                lines = file.readlines()
-                return len(lines)
-        except FileNotFoundError:
-            return -1
+class Character:
+    def __init__(self, name, health, damage):
+        self.name = name
+        self.health = health
+        self.damage = damage
 
-file_path = '.txt'
+    def attack(self, other):
+        print(f"{self.name} атакує і завдає {self.damage} одиниць урону {other.name}!")
 
-lines_count = FileUtils.count_lines(file_path)
-if lines_count != -1:
-    print(f"Кількість рядків у файлі '{file_path}': {lines_count}")
-else:
-    print(f"Файл '{file_path}' не знайдено.")
+player1 = Character("Гравець 1", 100, 20)
+player2 = Character("Гравець 2", 90, 15)
+
+player1.attack(player2)
+player2.attack(player1)
 
 
 
