@@ -15,6 +15,11 @@ class InformationSystem:
         else:
             print(f"Користувач {username} не знайдений. Додайте користувача перед додаванням контактів.")
 
+    @staticmethod
+    def display_info(system):
+        for user, contacts in system.data.items():
+            print(f"Користувач: {user}, Контакти: {contacts}")
+
 info_system = InformationSystem()
 info_system.add_user("Анна")
 info_system.add_user("Марія")
